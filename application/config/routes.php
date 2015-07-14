@@ -53,16 +53,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-<<<<<<< HEAD
+
 //routes for news controller
 $route['news/(:any)'] = 'news/view/$1';
 $route['news'] = 'news';
 
 //routes for static pages
-=======
+
 $route['news'] = 'news/view/$1';
 $route['default_controller'] = 'pages/view';
->>>>>>> work in class on Thursday 7/9/15
+
 $route['(:any)'] = 'pages/view/$1';
 $route['default_controller'] = 'pages/view';
 
