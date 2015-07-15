@@ -8,41 +8,32 @@ class News extends CI_Controller {
                 $this->load->model('news_model');
         }//end constructor
 
-<<<<<<< HEAD
-    public function index()
-    {
-            $data['news'] = $this->news_model->get_news();
-            $data['title'] = 'News archive';
 
-            $this->load->view('templates/header', $data);
-            $this->load->view('news/index', $data);
-            $this->load->view('templates/footer');
-    }//end index()
+		public function index()
+		{
+				$data['news'] = $this->news_model->get_news();
+				$data['title'] = 'News archive';
 
-    public function view($slug = NULL)
-    {
-        $data['news_item'] = $this->news_model->get_news($slug);
+				$this->load->view('templates/header', $data);
+				$this->load->view('news/index', $data);
+				$this->load->view('templates/footer');
+		}//end index()
 
-        if (empty($data['news_item']))
-        {
-                show_404();
-        }
+		public function view($slug = NULL)
+		{
+				$data['news_item'] = $this->news_model->get_news($slug);
 
-        $data['title'] = $data['news_item']['title'];
+				if (empty($data['news_item']))
+				{
+						show_404();
+				}
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('news/view', $data);
-        $this->load->view('templates/footer');
-    }//end view()
-=======
-        public function index()
-        {
-                $data['news'] = $this->news_model->get_news();
-        }//end index
+				$data['title'] = $data['news_item']['title'];
 
-        public function view($slug = NULL)
-        {
-                $data['news_item'] = $this->news_model->get_news($slug);
-        }//end view
->>>>>>> work in class on Thursday 7/9/15
+				$this->load->view('templates/header', $data);
+				$this->load->view('news/view', $data);
+				$this->load->view('templates/footer');
+		}//end view() 
+
+        
 }//end News

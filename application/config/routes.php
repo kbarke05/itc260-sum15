@@ -55,16 +55,21 @@ $route['translate_uri_dashes'] = FALSE;
 
 
 //routes for news controller
-$route['news/(:any)'] = 'news/view/$1';
-$route['news'] = 'news';
+//$route['news/(:any)'] = 'news/view/$1';
+//$route['news'] = 'news/index';
 
 //routes for static pages
 
-$route['news'] = 'news/view/$1';
-$route['default_controller'] = 'pages/view';
+//$route['news'] = 'news/view/$1';
+//$route['default_controller'] = 'pages/view';
 
+//$route['(:any)'] = 'pages/view/$1';
+
+$route['news/(:any)'] = 'news/view/$1';
+$route['news'] = 'news';
 $route['(:any)'] = 'pages/view/$1';
 $route['default_controller'] = 'pages/view';
+
 
 
 
