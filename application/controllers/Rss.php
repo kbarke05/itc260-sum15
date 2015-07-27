@@ -7,8 +7,14 @@ class Rss extends CI_Controller {
 		{
 				
 			//$request = "http://rss.news.yahoo.com/rss/software";
-			//$request = "https://news.google.com/news?pz=1&cf=all&ned=us&hl=en&topic=e&output=rss";
-			$request = "https://www.google.com/search?hl=en&gl=us&tbm=nws&authuser=0&q=lebron+james&oq=lebron+james&gs_l=news-cc.3..43j0l9j43i53.214462.218028.0.218630.12.6.0.6.6.0.188.815.2j4.6.0...0.0...1ac.1.BU39atpDqmo";
+			$request = "https://news.google.com/news?pz=1&cf=all&ned=us&hl=en&topic=e&output=rss";
+			
+			/*$request = "https://www.google.com/search?hl=en&gl=us&tbm=nws&authuser=0&q=lebron+james&oq=lebron+james&gs_l=news-cc.3..43j0l9j43i53.214462.218028.0.218630.12.6.0.6.6.0.188.815.2j4.6.0...0.0...1ac.1.BU39atpDqmo";*/
+			
+			
+			https://news.google.com/news/section?pz=1&cf=all&ned=us&topic=e&siidp=6aaa788d6d9c236e2a1c2d6adaa2d5b493d9&ict=ln
+			
+			
 			$response = file_get_contents($request);
 			$xml = simplexml_load_string($response);
 			  print '<h1>' . $xml->channel->title . '</h1>';
